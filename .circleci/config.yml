@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Run ReviewDog
           shell: /bin/sh
-          command: docker-compose run test npm lint | ./bin/reviewdog -reporter=github-pr-review -f=eslint
+          command: npx eslint '*.js' | ./bin/reviewdog -reporter=github-pr-review -f=eslint
 
 workflows:
   version: 2
