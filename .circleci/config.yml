@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Run ReviewDog
           shell: /bin/sh
-          command: npx eslint '*.js' | ./bin/reviewdog -reporter=github-pr-review -f=eslint
+          command: npm run lint | ./bin/reviewdog -reporter=github-pr-review -f=eslint
       - run:
           name: Run ESLint
           shell: /bin/sh
