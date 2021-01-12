@@ -9,6 +9,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: install eslint
+        run: npm isntall eslint
       - name: eslint
         uses: reviewdog/action-eslint@v1
         with:
