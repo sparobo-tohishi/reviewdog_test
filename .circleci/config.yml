@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Run ReviewDog
           shell: /bin/sh
-          command: npx eslint '*.js' | ./bin/reviewdog -reporter=github-pr-review -f=eslint
+          command: npm run lint | ./bin/reviewdog -reporter=github-pr-review -f=eslint
 
 workflows:
   version: 2
