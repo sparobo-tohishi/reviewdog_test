@@ -1,9 +1,8 @@
 version: 2.0
 jobs:
   deploy-prd:
-    machine:
-      node:
-        version: 12
+    docker:
+      - image: circleci/node:12
     steps:
       - checkout
       - run:
