@@ -10,15 +10,14 @@ jobs:
           command: npm install
       - run:
           name: Run ESLint
-          shell: /bin/sh
-          command: npm run lint
+          command: npx eslint '*.js'
       - run:
           name: Install ReviewDog
           command: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
       - run:
           name: Run ReviewDog
           shell: /bin/sh
-          command: npm run lint | ./bin/reviewdog -reporter=github-pr-review -f=eslint
+          command: npx eslint '*.js' | ./bin/reviewdog -reporter=github-pr-review -f=eslint
 
 workflows:
   version: 2
