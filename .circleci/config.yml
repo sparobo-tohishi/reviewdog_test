@@ -1,0 +1,27 @@
+version: 2.0
+jobs:
+  deploy-prd:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run:
+          name: Install packages
+          command: npm install
+      - run:
+          name: Install ReviewDog
+          command: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
+      - run:
+          name: Run ReviewDog
+          shell: /bin/sh
+          command: npm run lint | ./bin/reviewdog -reporter=github-pr-review -f=eslint
+      - run:
+          name: Run ESLint
+          shell: /bin/sh
+          command: npx eslint '*.js'
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - deploy-prd: {}

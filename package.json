@@ -1,0 +1,24 @@
+{
+  "name": "opt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.17.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sparobo-tohishi/reviewdog_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sparobo-tohishi/reviewdog_test/issues"
+  },
+  "homepage": "https://github.com/sparobo-tohishi/reviewdog_test#readme"
+}
